@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PBL Project - Mayank Kaushik</title>
+    <!-- Bootstrap CSS for styling -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #003366; /* Adjust based on college colors */
+            --secondary-color: #f8f9fa;
+            --accent-color: #ffcc00;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth;
+            background-color: var(--secondary-color);
+        }
+
+        /* Navbar Styling */
+        .navbar {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 10px 20px;
+        }
+        .navbar-brand img {
+            height: 50px; /* Adjust logo height */
+            margin-right: 15px;
+        }
+        .nav-link {
+            color: var(--primary-color) !important;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+
+        /* Section Styling */
+        section {
+            padding: 80px 20px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .hero-section {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #00509d 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .card {
+            border: none;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+        .card:hover { transform: translateY(-5px); }
+
+        .section-title {
+            color: var(--primary-color);
+            margin-bottom: 40px;
+            border-bottom: 3px solid var(--accent-color);
+            display: inline-block;
+        }
+
+        footer {
+            background: var(--primary-color);
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        /* Custom GitHub Button */
+        .btn-github {
+            background-color: #333;
+            color: white;
+            border-radius: 25px;
+            padding: 10px 25px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Section -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <!-- Ensure your logo file is named logo.png -->
+                <img src="logo.png" alt="College Logo"> 
+                <span class="d-none d-sm-inline">PBL - Computer Science</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#intro">Introduction</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#objectives">Objectives</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#methodology">Methodology</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#implementation">Implementation</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#results">Results</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Home / Title Slide -->
+    <section id="home" class="hero-section">
+        <div class="container">
+            <h1 class="display-3 fw-bold mb-4">PBL PROJECT TITLE</h1>
+            <h3 class="mb-5">Subject: Project Based Learning (PBL)</h3>
+            
+            <div class="row mt-5 justify-content-center">
+                <div class="col-md-4">
+                    <div class="p-3 bg-white text-dark rounded shadow">
+                        <h5>Submitted By</h5>
+                        <p class="mb-0"><strong>Mayank Kaushik</strong></p>
+                        <p>Reg No: 2430030310</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="p-3 bg-white text-dark rounded shadow">
+                        <h5>Under the Guidance of</h5>
+                        <p class="mb-0"><strong>Dr. Pranit Saurabh</strong></p>
+                        <p>Dept. of Computer Science & Engineering</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-5">
+                <a href="https://github.com/mayankkaushik0008/PBL" target="_blank" class="btn-github">
+                    <i class="fab fa-github me-2"></i> View Project on GitHub
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Introduction Section -->
+    <section id="intro" class="container">
+        <h2 class="section-title">Introduction</h2>
+        <div class="card p-4">
+            <p class="lead">
+                [Insert a brief overview of your project here. Explain what your project is and the domain it belongs to (e.g., Web Development, Machine Learning, etc.).]
+            </p>
+            <p>
+                This Project Based Learning (PBL) initiative aims to bridge the gap between theoretical knowledge and practical application by developing a functional solution for real-world challenges.
+            </p>
+        </div>
+    </section>
+
+    <!-- Problem Statement Section -->
+    <section id="problem" class="bg-light">
+        <div class="container">
+            <h2 class="section-title">Problem Statement</h2>
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <div class="card p-4 border-start border-4 border-primary">
+                        <p>[Define the problem you are solving. What are the current limitations or challenges that this project addresses?]</p>
+                    </div>
+                </div>
+                <div class="col-md-6 text-center">
+                    <i class="fas fa-exclamation-triangle fa-5x text-warning"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Objectives Section -->
+    <section id="objectives" class="container">
+        <h2 class="section-title">Key Objectives</h2>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card p-4 text-center h-100">
+                    <i class="fas fa-bullseye fa-2x mb-3 text-primary"></i>
+                    <h5>Primary Goal</h5>
+                    <p>To design and implement a scalable solution for [Your Topic].</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card p-4 text-center h-100">
+                    <i class="fas fa-code fa-2x mb-3 text-primary"></i>
+                    <h5>Tech Stack</h5>
+                    <p>To leverage modern technologies like Python/Java/Web Stack.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card p-4 text-center h-100">
+                    <i class="fas fa-check-circle fa-2x mb-3 text-primary"></i>
+                    <h5>User Experience</h5>
+                    <p>To provide an intuitive and efficient interface for end-users.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Methodology Section -->
+    <section id="methodology" class="bg-light">
+        <div class="container">
+            <h2 class="section-title">Methodology</h2>
+            <div class="card p-4">
+                <h5>Workflow / Process Flow</h5>
+                <p>The development followed an agile methodology including:</p>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">1. Requirement Analysis & Research</li>
+                    <li class="list-group-item">2. System Design & Architecture</li>
+                    <li class="list-group-item">3. Development & Coding Phase</li>
+                    <li class="list-group-item">4. Testing & Optimization</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Implementation Section -->
+    <section id="implementation" class="container">
+        <h2 class="section-title">Implementation</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <h5>Core Modules</h5>
+                <div class="accordion" id="implAccordion">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header"><button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#mod1">Module 1: Backend/Core Logic</button></h2>
+                        <div id="mod1" class="accordion-collapse collapse show">
+                            <div class="accordion-body">Details about the backend structure and database integration.</div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#mod2">Module 2: Frontend/Interface</button></h2>
+                        <div id="mod2" class="accordion-collapse collapse">
+                            <div class="accordion-body">Details about the UI/UX design using HTML/CSS/JS.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card bg-dark text-white p-3">
+                    <code>
+                        // Sample Project Snippet <br>
+                        function initializeProject() { <br>
+                        &nbsp;&nbsp;console.log("PBL Project Started..."); <br>
+                        }
+                    </code>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Section -->
+    <section id="results" class="bg-light">
+        <div class="container text-center">
+            <h2 class="section-title">Results & Conclusion</h2>
+            <div class="card p-5 mb-4 shadow">
+                <h4>Project Outcome</h4>
+                <p>The project was successfully completed with the following results: [Insert your key findings or output summary].</p>
+                <div class="alert alert-success mt-3">
+                    <strong>Conclusion:</strong> The system achieved [X]% efficiency in [Task Name].
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 PBL Project | Mayank Kaushik (2430030310)</p>
+            <p>Guided by: Dr. Pranit Saurabh</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/bootstrap.bundle.min.js"></script>
+</body>
+</html>
