@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Resource Finder | PBL Project</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-dark: #0f172a;
+            --accent-blue: #3b82f6;
+            --text-light: #f8fafc;
+            --card-bg: #ffffff;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+            background-color: #f1f5f9;
+            color: #1e293b;
+        }
+
+        /* Navbar Styling */
+        .navbar {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #e2e8f0;
+            padding: 0.8rem 2rem;
+        }
+        .navbar-brand img {
+            height: 45px;
+            margin-right: 12px;
+        }
+        .nav-link {
+            font-weight: 600;
+            color: var(--primary-dark) !important;
+            margin: 0 10px;
+            transition: 0.3s;
+        }
+        .nav-link:hover { color: var(--accent-blue) !important; }
+
+        /* Section Basics */
+        section {
+            padding: 100px 20px;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, #1e293b 100%);
+            color: white;
+            text-align: center;
+        }
+        .hero h1 { font-size: 3.5rem; font-weight: 800; margin-bottom: 1.5rem; }
+        .hero-info-box {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 2rem;
+            border-radius: 15px;
+            margin-top: 2rem;
+        }
+
+        /* Content Cards */
+        .card {
+            border: none;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+            height: 100%;
+        }
+        .card:hover { transform: translateY(-5px); }
+
+        .section-header {
+            margin-bottom: 3rem;
+            position: relative;
+            display: inline-block;
+        }
+        .section-header::after {
+            content: '';
+            width: 50%;
+            height: 4px;
+            background: var(--accent-blue);
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            border-radius: 2px;
+        }
+
+        /* GitHub Button */
+        .btn-github {
+            background: #24292e;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+            transition: 0.3s;
+        }
+        .btn-github:hover { background: #000; color: #fff; }
+
+        footer {
+            background: var(--primary-dark);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+        .tech-badge {
+            background: #e0e7ff;
+            color: #4338ca;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin: 5px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Nav Section -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <img src="logo.png" alt="Logo"> <!-- Ensure logo.png is in your folder -->
+                <span class="fw-bold">PBL PROJECT</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#intro">Introduction</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#problem">Problem</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#objectives">Objectives</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#methodology">Methodology</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#implementation">Implementation</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#results">Results</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Slide 1: Home -->
+    <section id="home" class="hero">
+        <div class="container">
+            <h1 class="display-3">AI Resource Finder</h1>
+            <p class="lead mb-4">Leveraging Natural Language Processing for Intelligent Recommendations</p>
+            
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="hero-info-box">
+                        <div class="row">
+                            <div class="col-md-6 border-end border-secondary">
+                                <p class="text-uppercase small mb-1">Student Details</p>
+                                <h5 class="mb-0">Mayank Kaushik</h5>
+                                <p>Reg No: 2430030310</p>
+                            </div>
+                            <div class="col-md-6">
+                                <p class="text-uppercase small mb-1">Guided By</p>
+                                <h5 class="mb-0">Dr. Pranit Saurabh</h5>
+                                <p>Dept. of Computer Science</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <a href="https://github.com/mayankkaushik0008/PBL" target="_blank" class="btn-github">
+                <i class="fab fa-github me-2"></i> View Project Code
+            </a>
+        </div>
+    </section>
+
+    <!-- Slide 2: Introduction -->
+    <section id="intro">
+        <div class="container">
+            <h2 class="section-header">1. Introduction</h2>
+            <div class="row align-items-center">
+                <div class="col-lg-7">
+                    <p class="lead">With the rapid growth of digital content, users face difficulty in locating accurate and relevant resources like courses, research papers, and datasets.</p>
+                    <p>Traditional search engines rely mainly on keyword matching and fail to understand user intent or context. The <strong>AI Resource Finder</strong> uses Natural Language Processing (NLP) and Machine Learning (ML) to provide personalized recommendations based on:</p>
+                    <ul class="list-unstyled">
+                        <li><i class="fas fa-check-circle text-primary me-2"></i> User Interests & Skill Level</li>
+                        <li><i class="fas fa-check-circle text-primary me-2"></i> Learning Goals & Previous Interactions</li>
+                        <li><i class="fas fa-check-circle text-primary me-2"></i> Semantic Domain Context</li>
+                    </ul>
+                </div>
+                <div class="col-lg-5 text-center">
+                    <i class="fas fa-brain fa-10x text-primary opacity-25"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 3: Problem Statement -->
+    <section id="problem" class="bg-white">
+        <div class="container">
+            <h2 class="section-header">2. Problem Statement</h2>
+            <div class="card p-5">
+                <div class="row">
+                    <div class="col-md-1 text-center">
+                        <i class="fas fa-exclamation-triangle fa-3x text-warning"></i>
+                    </div>
+                    <div class="col-md-11">
+                        <h4>The Challenge</h4>
+                        <p>Traditional search systems provide generic results and lack personalization. Finding high-quality technical resources from scattered online platforms is time-consuming and inefficient because these systems:</p>
+                        <ul class="row mt-3 list-unstyled">
+                            <li class="col-md-6 mb-2"><i class="fas fa-times me-2 text-danger"></i> Do not understand user intent</li>
+                            <li class="col-md-6 mb-2"><i class="fas fa-times me-2 text-danger"></i> Base results only on keyword matching</li>
+                            <li class="col-md-6 mb-2"><i class="fas fa-times me-2 text-danger"></i> Provide "Information Overload"</li>
+                            <li class="col-md-6 mb-2"><i class="fas fa-times me-2 text-danger"></i> Lack contextual accuracy</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 4: Key Objectives -->
+    <section id="objectives">
+        <div class="container">
+            <h2 class="section-header">3. Key Objectives</h2>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="card p-4 border-start border-4 border-primary">
+                        <h5>🎯 Primary Objective</h5>
+                        <p>To develop an AI-powered platform that provides personalized and context-aware resource recommendations.</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card p-4">
+                        <h5>📌 Secondary Objectives</h5>
+                        <ul class="small mb-0">
+                            <li>Implement semantic search using NLP</li>
+                            <li>Reduce user search time effectively</li>
+                            <li>Recommend resources based on skill level</li>
+                            <li>Create a scalable and user-friendly system</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 5: Methodology -->
+    <section id="methodology" class="bg-white">
+        <div class="container">
+            <h2 class="section-header">4. Methodology</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card p-3">
+                        <h6>1. Data Collection</h6>
+                        <p class="small text-muted">Scraping educational platforms, GitHub repositories, and research papers.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card p-3">
+                        <h6>2. Preprocessing</h6>
+                        <p class="small text-muted">Tokenization, stop-word removal, and stemming/lemmatization.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card p-3">
+                        <h6>3. Feature Extraction</h6>
+                        <p class="small text-muted">Using TF-IDF and Word Embeddings (Word2Vec/BERT).</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card p-3">
+                        <h6>4. Recommendation Engine</h6>
+                        <p class="small text-muted">Content-based filtering and Cosine Similarity for semantic matching.</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card p-3">
+                        <h6>5. Ranking Mechanism</h6>
+                        <p class="small text-muted">Ranking based on relevance score, popularity, and user feedback.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 6: Implementation -->
+    <section id="implementation">
+        <div class="container">
+            <h2 class="section-header">5. Implementation</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <h5 class="mb-3"><i class="fas fa-tools me-2"></i>Technologies Used</h5>
+                    <div>
+                        <span class="tech-badge">HTML/CSS/JS</span>
+                        <span class="tech-badge">Python</span>
+                        <span class="tech-badge">Flask/Django</span>
+                        <span class="tech-badge">MySQL/MongoDB</span>
+                        <span class="tech-badge">Scikit-learn</span>
+                        <span class="tech-badge">Pandas/NumPy</span>
+                        <span class="tech-badge">NLTK/SpaCy</span>
+                        <span class="tech-badge">BERT Transformers</span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <h5 class="mb-3"><i class="fas fa-project-diagram me-2"></i>System Workflow</h5>
+                    <div class="border-start ps-4">
+                        <p class="small mb-2">1. User enters natural language query</p>
+                        <p class="small mb-2">2. NLP processes and vectorizes query</p>
+                        <p class="small mb-2">3. Similarity computed against stored resources</p>
+                        <p class="small mb-2">4. Top relevant resources recommended & ranked</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 7: Results -->
+    <section id="results" class="bg-white">
+        <div class="container">
+            <h2 class="section-header">6. Results</h2>
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="list-group">
+                        <div class="list-group-item list-group-item-action border-0 shadow-sm mb-2 rounded">
+                            ✅ Provides more relevant results than keyword search
+                        </div>
+                        <div class="list-group-item list-group-item-action border-0 shadow-sm mb-2 rounded">
+                            ✅ Reduces searching time significantly
+                        </div>
+                        <div class="list-group-item list-group-item-action border-0 shadow-sm mb-2 rounded">
+                            ✅ Understands user intent via semantic analysis
+                        </div>
+                        <div class="list-group-item list-group-item-action border-0 shadow-sm mb-2 rounded">
+                            ✅ Improves accuracy through machine learning
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 text-center">
+                    <div class="p-4 bg-light rounded shadow-sm">
+                        <h6>Metrics Used</h6>
+                        <div class="text-primary fw-bold">Precision | Recall | F1-Score</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Conclusion Section -->
+    <section id="conclusion">
+        <div class="container text-center">
+            <h2 class="section-header">7. Conclusion</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-10">
+                    <p class="lead">The <strong>AI Resource Finder</strong> successfully demonstrates how Artificial Intelligence can enhance the process of discovering useful resources. By integrating NLP, the system moves beyond simple keyword matching to true semantic understanding.</p>
+                    <p>Future enhancements include deep learning integration and real-time user behavior tracking.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p class="mb-1"><strong>AI Resource Finder</strong> - PBL Project</p>
+            <p class="small text-muted mb-4">Mayank Kaushik | 2430030310 | Guided by Dr. Pranit Saurabh</p>
+            <a href="#home" class="btn btn-outline-light btn-sm">Back to Top</a>
+        </div>
+    </footer>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
